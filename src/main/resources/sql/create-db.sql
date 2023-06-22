@@ -54,7 +54,8 @@ create table oceny (
 drop table przedmioty if exists;
 create table przedmioty (
    id INT NOT NULL,
-   godzina DATE NOT NULL,
+   godzina TIME NOT NULL,
+   dzien_tygodnia VARCHAR(50) NOT NULL,
    semestr INT NOT NULL,
    PRIMARY KEY (id)
 );
@@ -62,7 +63,7 @@ create table przedmioty (
 drop table prowadzący if exists;
 create table prowadzący (
    id INT NOT NULL,
-   imie VARCHAR(50) NOT NULL,
+   imie
    nazwisko VARCHAR(50) NOT NULL,
    stopien_naukowy VARCHAR(50) NOT NULL,
    PRIMARY KEY (id)
