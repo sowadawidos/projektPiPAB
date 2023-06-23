@@ -70,7 +70,7 @@ create table prowadzący (
 );
 
 drop table sylabus if exists;
-create table prowadzący (
+create table sylabus (
    id INT NOT NULL,
    ects INT NOT NULL,
    nazwa_przedmiotu VARCHAR(50) NOT NULL,
