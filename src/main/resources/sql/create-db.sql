@@ -26,13 +26,22 @@ create table studenci (
    PRIMARY KEY (id)
 );
 
+drop table typ_adresu if exists;
+create table typ_adresu (
+   id    INT         NOT NULL,
+   nazwa VARCHAR(50) NOT NULL,
+   PRIMARY KEY (id)
+);
+
 drop table adresy if exists;
 create table adresy (
-   id INT NOT NULL,
-   kod_pocztowy VARCHAR(6) NOT NULL,
-   ulica VARCHAR(50) NOT NULL,
-   nr VARCHAR(10) NOT NULL,
-   PRIMARY KEY (id)
+   id            INT         NOT NULL,
+   kod_pocztowy  VARCHAR(6)  NOT NULL,
+   ulica         VARCHAR(50) NOT NULL,
+   nr            VARCHAR(10) NOT NULL,
+   typ_adresu_id INT         NOT NULL,
+   PRIMARY KEY (id),
+   FOREIGN KEY (typ_adresu_id) REFERENCES typ_adresu (id)
 );
 
 drop table kredencjaly if exists;
@@ -48,6 +57,7 @@ drop table oceny if exists;
 create table oceny (
    id INT NOT NULL,
    ocena FLOAT NOT NULL,
+   PRIMARY KEY (id)
 );
 
 
@@ -63,14 +73,14 @@ create table przedmioty (
 drop table prowadzący if exists;
 create table prowadzący (
    id INT NOT NULL,
-   imie
+   imie VARCHAR(50) NOT NULL,
    nazwisko VARCHAR(50) NOT NULL,
    stopien_naukowy VARCHAR(50) NOT NULL,
    PRIMARY KEY (id)
 );
 
 drop table sylabus if exists;
-create table prowadzący (
+create table sylabus (
    id INT NOT NULL,
    ects INT NOT NULL,
    nazwa_przedmiotu VARCHAR(50) NOT NULL,
