@@ -60,8 +60,8 @@ create table przedmioty (
    PRIMARY KEY (id)
 );
 
-drop table prowadzący if exists;
-create table prowadzący (
+drop table prowadzacy if exists;
+create table prowadzacy (
    id INT NOT NULL,
    imie
    nazwisko VARCHAR(50) NOT NULL,
