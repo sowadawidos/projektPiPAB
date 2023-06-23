@@ -40,7 +40,7 @@ create table kredencjaly (
    id INT NOT NULL,
    login VARCHAR(50) NOT NULL,
    haslo VARCHAR(50) NOT NULL,
-   czy_zablokowany BIT NOT NULL,
+   czy_zablokowany BOOLEAN NOT NULL,
    PRIMARY KEY (id)
 );
 
