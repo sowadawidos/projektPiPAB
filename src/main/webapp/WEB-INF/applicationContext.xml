@@ -27,7 +27,8 @@ które byśmy skonfigurowali ręcznie -->
     <bean id="entityManagerFactoryBean"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="eu.horyzont.pipab" />
+        <!-- początek nazw pakietów, w których mamy swoje encje   -->
+        <property name="packagesToScan" value="eu.horyzont.pipab.model" /> 
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
                 <property name="showSql" value="false" />
