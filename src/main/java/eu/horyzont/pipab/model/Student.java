@@ -1,3 +1,5 @@
+package eu.horyzont.pipab.model;
+
 import javax.persistence.*;
 
 @Entity
