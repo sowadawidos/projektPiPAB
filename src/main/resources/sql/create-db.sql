@@ -107,44 +107,32 @@ create table prowadzacy_do_przedmioty (
    PRIMARY KEY (id)
 );
 
-ALTER TABLE studenci
-ADD FOREIGN KEY (id_wyporzyczenia) REFERENCES wypozyczenia(id);
-
-ALTER TABLE studenci
-ADD FOREIGN KEY (id_platnosci) REFERENCES platnosci(id);
-
-ALTER TABLE studenci
-ADD FOREIGN KEY (id_adresu) REFERENCES adresy(id);
-
-ALTER TABLE studenci
-ADD FOREIGN KEY (id_oceny) REFERENCES oceny(id);
-
-ALTER TABLE studenci
-ADD FOREIGN KEY (id_oceny) REFERENCES oceny(id);
-
-ALTER TABLE studenci
-ADD FOREIGN KEY (id_kredencjalow) REFERENCES kredencjaly(id);
-
-ALTER TABLE studenci
-ADD FOREIGN KEY (id_kredencjalow) REFERENCES kredencjaly(id);
-
-ALTER TABLE adresy
-ADD FOREIGN KEY (id_typ_adresu) REFERENCES typ_adresu(id);
-
-ALTER TABLE adresy
-ADD FOREIGN KEY (id_typ_adresu) REFERENCES typ_adresu(id);
-
-ALTER TABLE administratorzy
+ALTER TABLE wypozyczenia
 ADD FOREIGN KEY (id_studenta) REFERENCES studenci(id);
 
-ALTER TABLE przedmioty
-ADD FOREIGN KEY (id_ocenya) REFERENCES oceny(id);
+ALTER TABLE platnosci
+ADD FOREIGN KEY (id_studenta) REFERENCES studenci(id);
+
+ALTER TABLE adresy
+ADD FOREIGN KEY (id_studenta) REFERENCES studenci(id);
+
+ALTER TABLE oceny
+ADD FOREIGN KEY (id_studenta) REFERENCES studenci(id);
+
+ALTER TABLE adresy
+ADD FOREIGN KEY (id_typ_adresu) REFERENCES typ_adresu(id);
+
+ALTER TABLE studenci
+ADD FOREIGN KEY (id_administratora) REFERENCES studenci(id);
+
+ALTER TABLE kredencjaly
+ADD FOREIGN KEY (id_studenta) REFERENCES studenci(id);
 
 ALTER TABLE przedmioty
 ADD FOREIGN KEY (id_sylabus) REFERENCES sylabus(id);
 
-ALTER TABLE przedmioty
-ADD FOREIGN KEY (id_ocenya) REFERENCES oceny(id);
+ALTER TABLE oceny
+ADD FOREIGN KEY (id_przedmiotu) REFERENCES przedmioty(id);
 
 ALTER TABLE studenci_do_przedmioty
 ADD FOREIGN KEY (id_studenta) REFERENCES studenci(id);
